@@ -3,38 +3,19 @@ function Book(title,author,pubDate,pages){
     this.author = author;
     this.pubDate = pubDate;
     this.pages = pages;
-
-    Book.prototype.genID = crypto.randomUUID;
 }
 
 function addBook (title,author,pubDate,pages){
     const book = new Book(title,author,pubDate,pages);
-    book.id = book.genID();
+    book.id = crypto.randomUUID();
     library.push(book);
 }
 
-const library = [
-    {
-        title:"The Three-Body Problem",
-        author:"Liu Cixin",
-        pubDate:2008,
-        pages:390
-    },
+const threeBody = new Book("The Three-Body Problem","Liu Cixin",2008,390);
+const darkForest = new Book("The Dark Forest","Liu Cixin",2008,400);
+const deathEnd = new Book("Death's End","Liu Cixin",2010,592);
 
-    {
-        title:"The Dark Forest",
-        author:"Liu Cixin",
-        pubDate:2008,
-        pages:400
-    },
-
-    {
-        title:"Death's End",
-        author:"Liu Cixin",
-        pubDate:2010,
-        pages:592
-    }
-];
+const library = [];
 
 function searchLibrary(){
     library.map((arrCont) => {
