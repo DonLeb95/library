@@ -25,4 +25,11 @@ function searchLibrary(){
         }
         console.log(bookData);
     })   
-}//what is going on here?
+}
+
+const newBookButton = document.getElementById("new_book");
+
+newBookButton.addEventListener("click",(e) => {
+    document.querySelector("dialog").showModal();
+});
+
