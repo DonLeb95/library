@@ -20,11 +20,40 @@ function addBook (title,author,pubDate,pages,readState){
     library.push(book);
 }
 
-const threeBody = new Book("The Three-Body Problem","Liu Cixin",2008,390);
-const darkForest = new Book("The Dark Forest","Liu Cixin",2008,400);
-const deathEnd = new Book("Death's End","Liu Cixin",2010,592);
-
-const library = [threeBody,darkForest,deathEnd,threeBody,darkForest,deathEnd,threeBody,darkForest,deathEnd];
+const library = [
+    {
+        title:"test",
+        author:"test",
+        pubdate: 2025,
+        pages:365,
+        read:"yes",
+        id: "identifier1"
+    },
+    {
+        title:"test",
+        author:"test",
+        pubdate: 2025,
+        pages:365,
+        read:"yes",
+        id: "identifier2"
+    },
+    {
+        title:"test",
+        author:"test",
+        pubdate: 2025,
+        pages:365,
+        read:"yes",
+        id: "identifier3"
+    },
+    {
+        title:"test",
+        author:"test",
+        pubdate: 2025,
+        pages:365,
+        read:"yes",
+        id: "identifier4"
+    }
+];
 
 function searchLibrary(){
     library.map((arrCont) => {
@@ -35,7 +64,23 @@ function searchLibrary(){
             bookData.textContent = `${objCont} : ${arrCont[objCont]}`;
             bookData.className = "book_data";
             book_card.append(bookData);  
-        }//all good so far here
+        }
+        let readCount = 0;
+        const readSt = document.createElement("button");
+        readSt.textContent = "Change read status";
+        readSt.addEventListener("click",(a) => {
+            a.preventDefault();
+            const container = a.currentTarget.closest(".book_cards");
+            const readPNode = container.querySelector("p:nth-child(5)");
+            const readOptions = ["unsure","no","yes"];
+            readPNode.textContent = `read : ${readOptions[readCount]}`;
+            readCount++;
+            if (readCount >= 3){
+                readCount = 0;
+            }
+        })
+
+
         const removeBookBtn = document.createElement("button");
         removeBookBtn.textContent = "Remove from library";
         removeBookBtn.addEventListener("click", (rb) => {
@@ -43,19 +88,19 @@ function searchLibrary(){
             const container = rb.currentTarget.closest(".book_cards");
             const pNodeList = container.querySelectorAll("p");
             const pArray = [...pNodeList];
-            //uncharted territory here
             const idRemove = pArray.find((p) => p.textContent.includes("id : ")).textContent.replace("id : ", "");
             library.splice(library.indexOf(library.find((obj)=> obj.id == idRemove)),1);
             container.remove();
         })
+
+        book_card.append(readSt);
         book_card.append(removeBookBtn);
-        lib.append(book_card);
-        //untested, also create stylings for cards and library divs 
+
+        lib.append(book_card); 
     })   
 }
 
 const newBookBtn = document.getElementById("new_book");
-
 newBookBtn.addEventListener("click",(e) => {
     document.querySelector("#form_display").showModal();
 });
@@ -77,21 +122,10 @@ bookFormBtn.addEventListener("click",(e) => {
     if(e.target.textContent == "Cancel"){document.querySelector("#form_display").close()}
 });
 
-//create display of books
 const lib = document.querySelector("#library");
 const displayLibraryBtn = document.querySelector("#display_library");
 displayLibraryBtn.addEventListener("click", (e) =>{
     e.preventDefault();
-    
-    //lib.style.display = "flex";
+    lib.style.display = "grid";
     searchLibrary();
-
-    //check library content
-    //extract data
-    //create book card for each data set
-
 });
-
-function removeBook(){
-    
-}
