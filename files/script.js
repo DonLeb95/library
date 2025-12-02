@@ -124,8 +124,16 @@ bookFormBtn.addEventListener("click",(e) => {
 
 const lib = document.querySelector("#library");
 const displayLibraryBtn = document.querySelector("#display_library");
+let libClickCount = 0;
 displayLibraryBtn.addEventListener("click", (e) =>{
     e.preventDefault();
-    lib.style.display = "grid";
-    searchLibrary();
+    libClickCount++;
+    if (libClickCount < 2){
+        searchLibrary();
+        lib.style.display = "grid";
+    } else {
+        document.querySelectorAll(".book_cards").forEach(n => n.remove());
+        lib.style.display = "none";
+        libClickCount = 0;
+    }
 });
