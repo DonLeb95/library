@@ -10,6 +10,68 @@ body{
     background-color: rgb(150,150,255);
 }
 
+dialog {
+    justify-self: center;
+    margin: 30px;
+    width:300px;
+    height: 400px;
+    background-color: rgb(235, 180, 180);
+    border: 2px rgb(225, 225, 100) solid;
+}
+
+dialog::backdrop{
+    background-color: rgba(50,50,155, 0.2);
+}
+
+label{
+    font-weight: 700;
+}
+
+input{
+    padding: 4px;
+    font-size: 1rem;
+    border: 2px rgb(150,150,255) solid;
+    background-color: rgb(255, 210, 210);
+}
+
+input:focus{
+    outline: 2px rgb(120,120,235) solid;
+    background-color:  rgb(235, 220, 220);
+}
+
+.book_data_input{
+    display: grid;
+    grid-template-rows: 1rem 1.5rem;
+    gap: 6px;
+    margin: 16px;
+}
+
+/* div of read radio buttons */
+form > :nth-child(5){
+    font-weight: 600;
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-template-rows: 1rem 1rem;
+}
+
+form > :nth-child(5) > p{
+    grid-area: 1 / 1 / 2 / -1;
+}
+
+form > :nth-child(5) > div{
+    grid-row: 2 / 3;
+}
+/* add & cancel button div */
+form > :nth-child(6){
+    display: flex;
+    gap: 16px;
+}
+
+form > :nth-child(6) button{
+    background-color: rgb(150, 255 ,150);
+    border: 2px rgb(150,150,255) solid;
+}
+
 .book_data_interact{
     display: flex;
     justify-content: space-around;
@@ -53,4 +115,5 @@ button{
     align-items: center;
     flex-wrap: wrap;
     box-shadow: 0px 2px 12px rgb(0,0,0);
+    border-radius: 10px;
 }
