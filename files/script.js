@@ -22,36 +22,12 @@ function addBook (title,author,pubDate,pages,readState){
 
 const library = [
     {
-        title:"test",
-        author:"test",
+        title:"Exotic Tales",
+        author:"Legolas Smith",
         pubdate: 2025,
-        pages:365,
+        pages:676,
         read:"yes",
-        id: "identifier1"
-    },
-    {
-        title:"test",
-        author:"test",
-        pubdate: 2025,
-        pages:365,
-        read:"yes",
-        id: "identifier2"
-    },
-    {
-        title:"test",
-        author:"test",
-        pubdate: 2025,
-        pages:365,
-        read:"yes",
-        id: "identifier3"
-    },
-    {
-        title:"test",
-        author:"test",
-        pubdate: 2025,
-        pages:365,
-        read:"yes",
-        id: "identifier4"
+        id: "7hvb23@ow09bFaW45%"
     }
 ];
 

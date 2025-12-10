@@ -102,10 +102,21 @@ button{
     width: 250px;
 }
 
+.book_cards > p {
+    background-color: rgb(255, 255, 180);
+    height: 1.2rem;
+    width: 250px;
+    box-shadow: 0 0 2px black;
+    border-radius: 5px;
+    text-align: center;
+    margin: 2px;
+    font-weight: 600
+}
+
 .book_cards{
     background-color: rgb(255, 220, 220);
     width:300px;
-    height: 200px;
+    height: 250px;
     margin: 16px;
     white-space: pre-line;
     padding: 12px;
