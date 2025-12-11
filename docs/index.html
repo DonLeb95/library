@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="book_data_interact">
+        <button id="new_book">New Book</button>
+        <button id="display_library">Show Collection</button>
+    </div>
+    <dialog id="form_display">
+        <form id="new_book_entry">
+            <div class="book_data_input">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+            </div>
+
+            <div class="book_data_input">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+            </div>
+
+            <div class="book_data_input">
+                <label for="pubDate">Publication Date:</label>
+                <input type="text" id="pubDate" name="pubDate">
+            </div>
+
+            <div class="book_data_input">
+                <label for="pages">Pages:</label>
+                <input type="text" id="pages" name="pages">
+            </div>
+
+            <div class="book_data_input">
+                <p>Have you finished reading it?</p>
+                <div>
+                    <input type="radio" id="yes" name="read" value="true">
+                    <label for="yes">Yes</label>
+                </div>
+                <div>
+                    <input type="radio" id="no" name="read" value="false">
+                    <label for="no">No</label>
+                </div>
+            </div>
+
+            <div class="book_data_input">
+                <button id="submit">Add Book</button>
+                <button id="cancel">Cancel</button>
+            </div>
+            
+        </form>
+    </dialog>
+    <div id="library"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
